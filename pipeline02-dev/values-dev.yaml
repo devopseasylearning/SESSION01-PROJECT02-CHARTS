@@ -2,7 +2,7 @@ replicaCount: 1
 image:
   repository: devopseasylearning2021
   pullPolicy: Always
-  tag: 212
+  tag: 213
 service:
   type: LoadBalancer
   port: 8080
