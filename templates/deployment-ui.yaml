@@ -1,0 +1,23 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.name }}-ui
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels: 
+      app: {{ .Values.name }}-ui
+      tier: {{ .Values.tier.ui }}    
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.name }}-ui
+        tier: {{ .Values.tier.ui }} 
+    spec:
+      containers:
+      - name: {{ .Values.name }}-ui
+        image: "{{ .Values.image.repository.ui }}:{{ .Values.image.tag.ui }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        ports:
+        - containerPort: {{ .Values.service.containerPort.ui }}

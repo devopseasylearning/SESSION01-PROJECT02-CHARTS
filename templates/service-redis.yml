@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.name }}-redis-server
+  labels:
+    app: {{ .Values.name }}-redis-server
+    tier: {{ .Values.tier.redis }}
+spec:
+  type: {{ .Values.service.redis }}
+  ports:
+  - port: {{ .Values.service.containerPort.redis }}
+  selector:
+    app: {{ .Values.name }}-redis-server
+    tier: {{ .Values.tier.redis }}

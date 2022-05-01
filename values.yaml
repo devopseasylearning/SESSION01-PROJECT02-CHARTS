@@ -1,0 +1,48 @@
+# Default values for challenger.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+name: challenger
+
+image:
+  repository: 
+      ui: devopseasylearning2021/challenger-ui
+      redis: devopseasylearning2021/challenger-redis
+      db: devopseasylearning2021/challenger-db
+      appserver: devopseasylearning2021/challenger-appserver
+
+
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag:
+    ui: 1.2.0
+    redis: 1.2.0
+    db: 1.2.0
+    appserver: 1.2.0
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+tier:
+  ui: frontend 
+  redis: cache
+  db: backenddb
+  appserver: middletier
+
+
+
+service:
+  type: ClusterIP
+  port: 80
+  containerPort:
+    ui: 80
+    redis: 6379
+    db: 5432
+    appserver: 4567
+     
+
+
+

@@ -1,0 +1,6 @@
+replicaCount: 1
+tag:
+    ui: 001
+    redis: 001
+    db: 001
+    appserver: 001

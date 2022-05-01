@@ -1,0 +1,23 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.name }}-redis-server
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels: 
+      app: redis-server
+      tier: {{ .Values.tier.redis }} 
+  template:
+    metadata:
+      labels:
+        app: redis-server
+        tier: {{ .Values.tier.redis }} 
+    spec:
+      containers:
+      - name: redis-server
+        image: "{{ .Values.image.repository.redis }}:{{ .Values.image.tag.redis }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        ports:
+        - containerPort: {{ .Values.service.containerPort.redis }}

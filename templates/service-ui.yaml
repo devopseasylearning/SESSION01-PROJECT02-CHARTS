@@ -1,0 +1,17 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.name }}-ui
+  labels:
+    app: {{ .Values.name }}-ui
+    tier: {{ .Values.tier.ui }} 
+spec:
+  type: {{ .Values.service.ui }}
+  ports:
+  - port: {{ .Values.service.containerPort.ui }}
+    protocol: {{ .Values.service.protocol }}
+    targetPort: {{ .Values.service.targetPort }}
+  selector:
+    app: {{ .Values.name }}-ui
+    tier: {{ .Values.tier.ui }} 

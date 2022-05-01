@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.name }}-db
+  labels:
+    app: {{ .Values.name }}-db
+    tier: {{ .Values.tier.db }} 
+spec:
+  type: {{ .Values.service.db }}
+  ports:
+  - port: {{ .Values.service.containerPort.db }}
+  selector:
+    app: {{ .Values.name }}-db
+    tier: {{ .Values.tier.db }} 
