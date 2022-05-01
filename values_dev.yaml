@@ -1,6 +1,6 @@
 replicaCount: 1
 tag:
-    ui: 496
-    redis: 496
-    db: 496
-    appserver: 496
+    ui: 497
+    redis: 497
+    db: 497
+    appserver: 497
