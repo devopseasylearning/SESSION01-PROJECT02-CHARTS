@@ -1,6 +1,6 @@
-replicaCount: 3331
+replicaCount: 1
 tag:
-    ui: 001333
-    redis: 301
-    db: 003
-    appserver: 003
+    ui: 491
+    redis: 491
+    db: 491
+    appserver: 491
