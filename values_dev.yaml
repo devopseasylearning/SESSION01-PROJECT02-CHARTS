@@ -1,6 +1,6 @@
 replicaCount: 1
 tag:
-    ui: 509
-    redis: 509
-    db: 509
-    appserver: 509
+    ui: 28
+    redis: 28
+    db: 28
+    appserver: 28
